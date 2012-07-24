@@ -1,0 +1,484 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>iView v2.0</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/custom-css/custom.css" type="text/css" media="screen, projection">
+	<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shCore.js"></script>
+
+	<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shAutoloader.js"></script>
+
+	<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+
+	<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shBrushXml.js"></script>
+
+	<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shBrushCss.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="assets/syntaxhighlighter/styles/shCoreFadeToGrey.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+		<h1 class="center">&ldquo;iView&rdquo;</h1>
+	
+		<h3 class="center alt">&ldquo;iView&rdquo; Documentation by &ldquo;Hemn Chawroka&rdquo; v2.0</h3>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: July 09, 2012<br>
+					By: Hemn Chawroka<br>
+					Website: <a href="http://iprodev.com/">iProDev</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for choosing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my contact page form <a href="http://iprodev.com/contact/">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#Setup">Setup</a></li>
+			<li><a href="#availableParameters">Available Parameters</a></li>
+			<li><a href="#dataAttributes">The HTML5 "data-" attributes</a></li>
+			<li><a href="#cssStyles">CSS Styles and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="Setup"><strong>A) Setup</strong> - <a href="#toc">top</a></h3>
+		<p>Include the following javascript and css code into HEAD section of the page:</p>
+		
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;link rel="stylesheet" href="iview.css" type="text/css" media="screen" /&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="raphael-min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="jquery.easing.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="iview.encoded.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+
+		<p>Then insert into body section the slide (or slides) to which you want to apply the effect.</p>
+		
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;div id="iview"&gt;
+	&lt;!-- Slide 1 --&gt;
+	&lt;div data-iview:thumbnail="photos/photo1_thumb.jpg" data-iview:image="photos/photo1.jpg"&gt;&lt;/div&gt;
+	&lt;!-- Slide 2 --&gt;
+	&lt;div data-iview:thumbnail="photos/photo2_thumb.jpg" data-iview:image="photos/photo2.jpg"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		
+		<p>You can add a caption to the slide, just put a div with class "iview-caption" into the div above:</p>
+		
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;div id="iview"&gt;
+	&lt;!-- Slide 1 --&gt;
+	&lt;div data-iview:thumbnail="photos/photo1_thumb.jpg" data-iview:image="photos/photo1.jpg"&gt;
+		&lt;!-- Caption --&gt;
+		&lt;div class="iview-caption" data-x="0" data-y="0" data-width="400" data-height="300" data-transition="wipeRight" data-speed="700"&gt;&lt;h3&gt;The Responsive Caption&lt;/h3&gt;This is the product that you &lt;b&gt;&lt;i&gt;all have been waiting for&lt;/b&gt;&lt;/i&gt;!&lt;br&gt;&lt;br&gt;Customize this slider with just a little HTML and CSS to your very needs. Give each slider some captions to transport your message.&lt;br&gt;&lt;br&gt;All in all it works on every browser (including IE6 / 7 / 8) and on iOS and Android devices!&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Slide 2 --&gt;
+	&lt;div data-iview:thumbnail="photos/photo2_thumb.jpg" data-iview:image="photos/photo2.jpg"&gt;
+		&lt;!-- Caption --&gt;
+		&lt;div class="iview-caption" data-x="70" data-y="70" data-transition="expandLeft"&gt;Caption Description&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+		<p>By adding one more <b>html5 data-attribute</b> to the "iview-caption" div you can decide the effect of the caption. The possible effects are: "wipeLeft", "wipeRight", "wipeTop", "wipeBottom", "expandLeft", "expandRight", "expandTop", "expandBottom", "fade"</p>
+
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+	&lt;div class="iview-caption" data-transition="fade"&gt;Caption description&lt;/div&gt;
+</pre>
+
+		<p>A caption can have a data-transition "fade", in this case it will be displayed with a fading effect.<br>More <b>HTML5 data-attributes</b> avalable:</p> 
+		
+		<table>
+			<thead> 
+				<tr class="even"> 
+					<th>Parameter</th> 
+					<th>Accepted values</th> 
+				</tr> 
+			</thead>
+			<tbody>
+				<tr>
+					<td class="parameter" width="130">data-transition</td>
+					<td>Transition type can be any one of the following: <i>"wipeLeft", "wipeRight", "wipeTop", "wipeBottom", "expandLeft", "expandRight", "expandTop", "expandBottom", "fade"</i></td>
+				</tr>
+				<tr class="even">
+					<td class="parameter" width="130">data-easing</td>
+					<td>for the complete list <a href="http://jqueryui.com/demos/effect/easing.html" target="_blank">http://jqueryui.com/demos/effect/easing.html</a></td>
+				</tr>
+				<tr>
+					<td class="parameter">data-speed</td>
+					<td>Transition duration in milliseconds.</td>
+				</tr>
+				<tr class="even">
+					<td class="parameter" width="130">data-x</td>
+					<td>Caption x position in pixel.</td>
+				</tr>
+				<tr>
+					<td class="parameter">data-y</td>
+					<td>Caption y position in pixel.</td>
+				</tr>
+				<tr class="even">
+					<td class="parameter" width="130">data-width</td>
+					<td>Caption width in pixel, if not set will get the source caption width.</td>
+				</tr>
+				<tr>
+					<td class="parameter" width="130">data-height</td>
+					<td>Caption height in pixel, if not set will get the source caption height.</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<h4>VIDEOS</h4>
+		<p>To include a <b>video</b> into your slideshow you must put an iframe into one of your slides:</p>
+
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;div data-iview:image="photos/photo.jpg"&gt;
+	&lt;!-- Video iFrame --&gt;
+	&lt;iframe src="http://player.vimeo.com/video/11475955?byline=1&amp;portrait=0" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
+
+	&lt;!-- Caption --&gt;
+	&lt;div class="iview-caption" data-x="70" data-y="70" data-transition="expandLeft"&gt;Caption Description&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		<p>As you can see I set the width and the height of the iframe to <b>100%</b>, so it changes its size according with the size of the slideshows (I mean the iframe, the video in the iframe will mantain its ratio).</p>
+
+		<p>Finally you need to hook up your script using the <b>$(document).ready()</b> function:</p>
+
+<pre class="brush: js; toolbar: false; auto-links: false;">
+&lt;script type="text/javascript"&gt;
+$(document).ready(function() {
+    $('#slider').iView();
+});
+&lt;/script&gt;
+</pre>
+		<hr>
+
+		<h3 id="availableParameters"><strong>B) Available Parameters</strong> - <a href="#toc">top</a></h3>
+
+		<p>The iView Slider has plenty of options to fiddle with. Below is an example of the code with all available options and their defaults:</p>
+
+<pre class="brush: js; toolbar: false; auto-links: false;">
+&lt;script type="text/javascript"&gt;
+$(document).ready(function() {
+    $('#slider').iView({
+		fx: 'random', // Specify sets like: 'left-curtain,fade,zigzag-top,strip-left-fade'
+		easing: 'easeOutQuad', // for the complete list http://jqueryui.com/demos/effect/easing.html
+		strips: 20, // Number of strips for strip animations
+		blockCols: 10, // Number of block columns for block animations
+		blockRows: 5, // Number of block rows for block animations
+		captionSpeed: 500, // Caption transition speed
+		captionEasing: 'easeInOutSine', // Caption transition easing effect
+		captionOpacity: 1, // Caption opacity
+		animationSpeed: 500, // Slide transition speed
+		pauseTime: 5000, // How long each slide will show
+		startSlide: 0, // Set starting Slide (0 index)
+		directionNav: true, // Next & Previous navigation
+		directionNavHoverOpacity: 0.6, // Fade on hover
+		controlNav: true, // 1,2,3,4... navigation
+		controlNavNextPrev: true, // previous,next navigation
+		controlNavHoverOpacity: 0.6, // Navigation fade on hover
+		controlNavThumbs: false, // Show thumbs navigation
+		controlNavTooltip: true, // Show tooltip image previewer
+		autoAdvance: true, // Force auto transitions
+		keyboardNav: true, // Use left & right arrows
+		touchNav: true, // Use Touch swipe to change slides
+		pauseOnHover: false, // Stop slider while hovering
+		nextLabel: "Next", // To set the string of the next button (Multilanguage use)
+		previousLabel: "Previous", // To set the string of the previous button (Multilanguage use)
+		playLabel: "Play", // To set the string of the play button (Multilanguage use)
+		pauseLabel: "Pause", // To set the string of the pause button (Multilanguage use)
+		closeLabel: "Close", // To set the string of the close button (Multilanguage use)
+		randomStart: false, // Start on a random slide
+		timer: 'Pie', // Timer style: "Pie", "360Bar" or "Bar"
+		timerBg: '#000', // Timer background
+		timerColor: '#EEE', // Timer color
+		timerOpacity: 0.5, // Timer opacity
+		timerDiameter: 30, // Timer diameter
+		timerPadding: 4, // Timer padding
+		timerStroke: 3, // Timer stroke width
+		timerBarStroke: 1, // Timer Bar stroke width
+		timerBarStrokeColor: '#EEE', // Timer Bar stroke color
+		timerBarStrokeStyle: 'solid', // Timer Bar stroke style
+		timerX: 10, // Timer X position threshold
+		timerY: 10, // Timer Y position threshold
+		tooltipX: 5, // Tooltip X position threshold
+		tooltipY: -5, // Tooltip Y position threshold
+		onBeforeChange: function(){}, // Triggers before a slide transition
+		onAfterChange: function(){}, // Triggers after a slide transition
+		onSlideshowEnd: function(){}, // Triggers after all slides have been shown
+		onLastSlide: function(){}, // Triggers when last slide is shown
+		onAfterLoad: function(){}, // Triggers when slider has loaded
+		onPause: function(){}, // Triggers when slider has paused
+		onPlay: function(){} // Triggers when slider has played
+    });
+});
+&lt;/script&gt;
+</pre>
+
+		<p>The <b>effect</b> parameter can be any of the following:</p>
+		
+		<ul>
+			<li>random</li>
+			<li>strip-down-right</li>
+			<li>strip-down-left</li>
+			<li>strip-up-right</li>
+			<li>strip-up-left</li>
+			<li>strip-up-down</li>
+			<li>strip-up-down-left</li>
+			<li>strip-left-right</li>
+			<li>strip-left-right-down</li>
+			<li>slide-in-right</li>
+			<li>slide-in-left</li>
+			<li>slide-in-up</li>
+			<li>slide-in-down</li>
+			<li>left-curtain</li>
+			<li>right-curtain</li>
+			<li>top-curtain</li>
+			<li>bottom-curtain</li>
+			<li>fade</li>
+			<li>block-random</li>
+			<li>block-fade</li>
+			<li>block-fade-reverse</li>
+			<li>block-expand</li>
+			<li>block-expand-reverse</li>
+			<li>block-expand-random</li>
+			<li>block-drop-random</li>
+			<li>zigzag-top</li>
+			<li>zigzag-bottom</li>
+			<li>zigzag-grow-top</li>
+			<li>zigzag-grow-bottom</li>
+			<li>zigzag-drop-top</li>
+			<li>zigzag-drop-bottom</li>
+			<li>strip-left-fade</li>
+			<li>strip-right-fade</li>
+			<li>strip-top-fade</li>
+			<li>strip-bottom-fade</li>
+		</ul>
+
+		<hr>
+
+		<h3 id="dataAttributes"><strong>C) The HTML5 "data-" attributes</strong> - <a href="#toc">top</a></h3>
+
+		<p>The URL of the image on the slide is added by using the HTML5 data- attribute. This allows to load the image only when the slideshow calls it and not (lazy load method).<br><br>By using the HTML5 data- attribute you can add many properties to your slide, that overwrite the general ones. For instance the URL of the thumbnails:</p>
+
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;div data-iview:thumbnail="photos/photo1_thumb.jpg" data-iview:image="photos/photo1.jpg"&gt;&lt;/div&gt;
+</pre>
+
+		<p>or a transition effect for one slide only:</p>
+
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;div data-iview:image="photos/photo1.jpg" data-iview:transition="zigzag-top"&gt;&lt;/div&gt;
+</pre>
+
+		<p>You can set a random transition between many effects:</p>
+
+<pre class="brush: xml; toolbar: false; auto-links: false;">
+&lt;div data-iview:image="photos/photo1.jpg" data-iview:transition="zigzag-top,top-curtain,fade"&gt;&lt;/div&gt;
+</pre>
+
+		<p>Here below you can see all the other "data-" possibilities:</p>
+
+		<table>
+			<thead> 
+				<tr class="even"> 
+					<th>Parameter</th> 
+					<th>Accepted values</th> 
+				</tr> 
+			</thead>
+			<tbody>
+				<tr>
+					<td class="parameter" width="130">data-iview:transition</td>
+					<td>Transition type can be any one of the following: <i>"strip-down-right", "strip-down-left", "strip-up-right", "strip-up-left", "strip-up-down", "strip-up-down-left", "strip-left-right", "strip-left-right-down", "slide-in-right", "slide-in-left", "slide-in-up", "slide-in-down", "left-curtain", "right-curtain", "top-curtain", "bottom-curtain", "fade", "block-random", "block-fade", "block-fade-reverse", "block-expand", "block-expand-reverse", "block-expand-random", "block-drop-random", "zigzag-top", "zigzag-bottom", "zigzag-grow-top", "zigzag-grow-bottom", "zigzag-drop-top", "zigzag-drop-bottom", "strip-left-fade", "strip-right-fade", "strip-top-fade", "strip-bottom-fade"</i></td>
+				</tr>
+				<tr class="even">
+					<td class="parameter" width="130">data-iview:easing</td>
+					<td>for the complete list <a href="http://jqueryui.com/demos/effect/easing.html" target="_blank">http://jqueryui.com/demos/effect/easing.html</a></td>
+				</tr>
+				<tr>
+					<td class="parameter">data-iview:image</td>
+					<td>The URL of the image of the slide</td>
+				</tr>
+				<tr class="even">
+					<td class="parameter" width="130">data-iview:thumbnail</td>
+					<td>The URL of the thumbnail of the slide (if the value of the 'controlNavThumbs' option is true)</td>
+				</tr>
+				<tr>
+					<td class="parameter">data-iview:pausetime</td>
+					<td>The milliseconds between the end of the sliding effect and the start of the next one</td>
+				</tr>
+				<tr class="even">
+					<td class="parameter" width="130">data-iview:type</td>
+					<td>The type of the slide (set it to video to optimize slider for video show)</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<h3 id="cssStyles"><strong>D) CSS Styles and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>I'm using two CSS files in this sample. The first one contains some general styling, such as anchor tag colors, font-sizes, etc for the page.</p> 
+
+		<p>The second file contains all of the specific stylings for the script. Keep in mind, that these values might be overridden somewhere else in the file. The file is separated into sections using:</p>  
+
+<pre class="brush: css; toolbar: false; auto-links: false;">
+/* The strips and blocks in the Slider */
+.iview-strip {
+	some styles
+}
+.iview-block {
+	some styles
+}
+
+/* Direction nav styles (e.g. Next & Prev) */
+.iview-directionNav a {
+	some styles
+}
+.iview-prevNav {
+	some styles
+}
+.iview-nextNav {
+	some styles
+}
+
+/* Control nav styles (e.g. 1,2,3...) */
+.iview-controlNav {
+	some styles
+}
+.iview-controlNav a {
+	some styles
+}
+.iview-controlNav a img {
+	some styles
+}
+.iview-controlNav a.active {
+	some styles
+}
+
+/* The captions in the Slider */
+.iview-caption {
+	some styles
+}
+
+/* The timer in the Slider */
+#iview-timer {
+	some styles
+}
+
+#iview-timer div {
+	some styles
+}
+
+/* The Preloader in the Slider */
+#iview-preloader {
+	some styles
+}
+#iview-preloader div {
+	some styles
+}
+
+/* The video show in the Slider */
+.iview-video-show {
+	some styles
+}
+.iview-video-show .iview-video-container {
+	some styles
+}
+.iview-video-show .iview-video-container a.iview-video-close {
+	some styles
+}
+.iview-video-show .iview-video-container a.iview-video-close:hover {
+	some styles
+}
+
+
+/* The tooltip in the Slider */
+#iview-tooltip {
+	some styles
+}
+
+#iview-tooltip div.holder {
+	some styles
+}
+
+#iview-tooltip div.holder div.container {
+	some styles
+}
+
+#iview-tooltip div.holder div.container div {
+	some styles
+}
+
+#iview-tooltip div.holder div.container div img {
+	some styles
+}
+</pre>
+
+		<hr>
+		
+		<h3 id="javascript"><strong>E) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p><b>How to pause and play the slider?</b></p>
+		
+<pre class="brush: js; toolbar: false; auto-links: false;">
+$('#slider').trigger('iView:pause'); //Stop the Slider
+$('#slider').trigger('iView:play'); //Start the Slider
+</pre>
+		
+		<p><b>How to change slide?</b></p>
+		
+<pre class="brush: js; toolbar: false; auto-links: false;">
+$('#slider').trigger('iView:goSlide', [2]); //Go to slide 2
+</pre>
+		
+		<p><b>How to next and previous the slider?</b></p>
+		
+<pre class="brush: js; toolbar: false; auto-links: false;">
+$('#slider').trigger('iView:previous'); //Go to previous slide
+$('#slider').trigger('iView:next'); //Go to next slide
+</pre>
+		
+		<p><b>How to set a random starting slide?</b></p>
+		
+<pre class="brush: js; toolbar: false; auto-links: false;">
+var total = $('#slider').children().length;
+var rand = Math.floor(Math.random()*total);
+$('#slider').iView({
+	startSlide:rand
+});
+</pre>
+		
+		
+		<hr>
+		
+		<p>Once again, thank you so much for choosing this script. As I said at the beginning, I'd be glad to help you if you have any questions relating to this script.</p> 
+		
+		<p class="append-bottom alt large"><strong>Hemn Chawroka</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
