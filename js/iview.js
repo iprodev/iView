@@ -1,7 +1,7 @@
 /**
  * jQuery iView Slider v2.0
  * 
- * @version: 2.0 - July 09, 2012
+ * @version: 2.0.1 - August 17, 2012
  * 
  * @author: Hemn Chawroka
  *          hemn@iprodev.com
@@ -358,7 +358,11 @@
 			
 			//Bind the video closer
 			$('.iview-video-close', iv.slider).click(function(){
-				var video = $(this).parents('.iview-video-show');
+				var video = $(this).parents('.iview-video-show'),
+					iframe = $('iframe', video),
+					src = iframe.attr('src');
+				
+				iframe.removeAttr('src').attr('src',src);
 				
 				video.animate({ top: '-' + iv.defs.height + 'px' }, 1000, 'easeOutBounce', function(){
 					video.hide();
