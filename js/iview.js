@@ -587,7 +587,7 @@
 				captionContain.css({
 					opacity: 0,
 					position: 'relative',
-					width: w,
+					width: w+5, /* Caption div contracts due to paddings used so adding 5px resolves the issue */
 					height: h
 				});
 
