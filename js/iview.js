@@ -271,7 +271,7 @@
 			}
 
 			//Play/Pause action
-			iv.iviewTimer.live('click', function () {
+			 $(document).on('click', iv.iviewTimer, function () { 
 				if (iv.iviewTimer.hasClass('paused')) {
 					iv.playSlider();
 				} else {
@@ -424,14 +424,14 @@
 					}, 300);
 				});
 
-				$('a.iview-prevNav', iv.sliderContent).live('click', function () {
+				$(iv.sliderContent).on('click', 'a.iview-prevNav', function () {
 					if (iv.defs.lock) return false;
 					iv.cleanTimer();
 					iv.defs.slide -= 2;
 					iv.goTo('prev');
 				});
 
-				$('a.iview-nextNav', iv.sliderContent).live('click', function () {
+				$(iv.sliderContent).on('click', 'a.iview-nextNav', function () { 
 					if (iv.defs.lock) return false;
 					iv.cleanTimer();
 					iv.goTo('next');
@@ -468,20 +468,20 @@
 				//Set initial active link
 				$('.iview-controlNav a.iview-control:eq(' + iv.defs.slide + ')', iv.sliderContent).addClass('active');
 
-				$('a.iview-controlPrevNav', iv.sliderContent).live('click', function () {
+				$(iv.sliderContent).on('click', 'a.iview-controlPrevNav', function () { 
 					if (iv.defs.lock) return false;
 					iv.cleanTimer();
 					iv.defs.slide -= 2;
 					iv.goTo('prev');
 				});
 
-				$('a.iview-controlNextNav', iv.sliderContent).live('click', function () {
+				$(iv.sliderContent).on('click', 'a.iview-controlNextNav', function () { 
 					if (iv.defs.lock) return false;
 					iv.cleanTimer();
 					iv.goTo('next');
 				});
 
-				$('.iview-controlNav a.iview-control', iv.sliderContent).live('click', function () {
+				$(iv.sliderContent).on('click', '.iview-controlNav a.iview-control', function () {
 					if (iv.defs.lock) return false;
 					if ($(this).hasClass('active')) return false;
 					iv.cleanTimer();
