@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Galerie Fablab Lannion</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="css/styles.css" />		<link rel="stylesheet" href="css/iview.css" />		<link rel="stylesheet" href="css/skin 1/style.css" />
+		<script src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/raphael-min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.js"></script>		<meta charset="UTF-8">
+		<script src="js/iview.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#iview').iView({
+					pauseTime: 3000,
+					directionNav: false,
+					controlNav: true,
+					tooltipY: -15
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+<div id="cont">
+		<div id="header">
+			<div class="container">
+				<h1><a href="<?=$siteurl?>">Galerie du Fablab de Lannion</a></h1>
+
+
+			</div>
+		</div>
+
+	<div class="container">
+		<div id="iview">
+			<div data-iview:image="photos/sous-bocs.png" data-iview:transition="fade">
+				<div class="iview-caption caption5" data-x="650" data-y="320" data-transition="fade">Sous-bocs</div>
+			</div>
+
+			<div data-iview:image="photos/trender.png" data-iview:transition="slice-top-fade,slice-right-fade" data-iview:pausetime="2500">
+				<div class="iview-caption caption2" data-x="650" data-y="280" data-transition="strip-fade">Trender</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">#IoT</div>
+			</div>
+
+			<div data-iview:image="photos/theatre.jpg" data-iview:transition="fade">
+				<div class="iview-caption caption3" data-x="500" data-y="100" data-transition="fade">Maquette de Théâtre</div>
+				<div class="iview-caption blackcaption" data-x="600" data-y="200" data-transition="wipeLeft" data-easing="easeInOutElastic">par Agata</div>
+			</div>
+
+			<div data-iview:image="photos/carte.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption1" data-x="600" data-y="280" data-transition="strip-fade">Carte 3D</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Eric</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">OSM</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="209" data-transition="wipeLeft" data-easing="easeInOutElastic">LTC</div>
+			</div>
+
+    	<div data-iview:image="photos/photoX.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption5" data-x="600" data-y="280" data-transition="strip-fade">Borne d'arcade</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Jérôme</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">recalbox</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="209" data-transition="wipeLeft" data-easing="easeInOutElastic">Retrogaming</div>
+			</div>
+
+    	<div data-iview:image="photos/miroir.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption1" data-x="600" data-y="280" data-transition="strip-fade">Miroir</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par David</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">Découpeuse Laser</div>
+	  	</div>
+
+    	<div data-iview:image="photos/nichoir.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption2" data-x="600" data-y="280" data-transition="strip-fade">Nichoir</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">Atelier Junior</div>
+    	</div>
+
+    	<div data-iview:image="photos/puzzle.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption5" data-x="600" data-y="280" data-transition="strip-fade">Puzzle Trégor</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Eric</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">OSM</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="209" data-transition="wipeLeft" data-easing="easeInOutElastic">LTC</div>
+    	</div>
+
+    	<div data-iview:image="photos/photoX.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption1" data-x="600" data-y="280" data-transition="strip-fade">Disque déco</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par David</div>
+    	</div>
+
+			<div data-iview:image="photos/ruches.jpg" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption3" data-x="200" data-y="180" data-transition="strip-fade">Ruches connectées</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Bernard</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">LoRa</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="209" data-transition="wipeLeft" data-easing="easeInOutElastic">IoT</div>
+    	</div>
+
+			<div data-iview:image="photos/radar.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption5" data-x="550" data-y="280" data-transition="strip-fade">Radar de recul</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">Tuto arduino</div>
+    	</div>
+
+			<div data-iview:image="photos/macareux.jpg" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption" data-x="300" data-y="280" data-transition="strip-fade">Compteurs de macareux</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Anatole & FX     </div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">LoRa</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="209" data-transition="wipeLeft" data-easing="easeInOutElastic">LPO</div>
+    	</div>
+
+			<div data-iview:image="photos/kart.jpg" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption3" data-x="600" data-y="280" data-transition="strip-fade">Kart DIY</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Daniel, Anatole, Fred  & Yannick    </div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="172" data-transition="wipeLeft" data-easing="easeInOutElastic">MakeRrrrrrrrrrr race</div>
+    	</div>
+
+			<div data-iview:image="photos/atelier.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption" data-x="600" data-y="280" data-transition="strip-fade">Atelier Junior</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">avec la Fondation Orange</div>
+    	</div>
+
+			<div data-iview:image="photos/boite.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption2" data-x="600" data-y="280" data-transition="strip-fade">Boîte</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">Marqueterie</div>
+	  	</div>
+
+			<div data-iview:image="photos/photoX.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption5" data-x="600" data-y="280" data-transition="strip-fade">Animaux</div>
+				<div class="iview-caption blackcaption" data-x="50" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic">par Alain</div>
+	  	</div>
+
+			<div data-iview:image="photos/photoX.png" data-iview:transition="slice-top-fade,slice-right-fade">
+				<div class="iview-caption caption2" data-x="600" data-y="280" data-transition="strip-fade">Boules de Noël</div>
+	  	</div>
+
+    	<div data-iview:image="photos/bob.png" data-iview:type="video" data-iview:transition="slice-top-fade,slice-right-fade">
+    		<iframe src="https://www.youtube.com/watch?v=YbgazifRcj4" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    		<div class="iview-caption caption3" data-x="600" data-y="345" data-transition="wipeLeft">Bob le bipède</div>
+    	</div>
+
+</div>
+</div>
+
+
+	<div class="copy">Créé par <a href="https://twitter.com/morganrichomme">Colvert</a>.<br></div>
+</div>
+
+<div id="background-image">
+</div>
+<script type="text/javascript" src="js/jquery.fullscreen.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#background-image").fullscreenBackground();
+	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30854466-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</body>
+</html>
